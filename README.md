@@ -4,7 +4,7 @@ This is an enhanced version of the Todo Card component built as part of the HNG 
 
 
 ## Live Demo
-[]
+https://hng-stage-0-todo-card-pi.vercel.app
 
 ## Core Features (Stage 0)
 - Displays task title and description
