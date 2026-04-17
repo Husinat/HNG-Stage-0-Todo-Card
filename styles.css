@@ -22,6 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  overflow: hidden;
 }
 
 .card h2 {
@@ -43,7 +44,6 @@ body {
 
 .priority.high {
   background-color: #ffe5e5;
-  color: #d00000;
 }
 
 [data-testid="test-todo-status"] {
@@ -94,6 +94,170 @@ label {
 }
 
 
+
+
+
+
+
+
+
+
+/* 1a styles */
+.edit-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #4CAF50;
+}
+
+.edit-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.edit-form textarea,
+.edit-form select,
+.cardContent select,
+.edit-form input[type="date"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.2s;
+}
+
+.edit-form input:focus,
+.edit-form textarea:focus,
+.edit-form select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.edit-form textarea {
+  resize: vertical;
+  min-height: 80px;
+  max-height: 200px;
+}
+#title {
+  padding: 10px;
+  width: 90%;
+}
+
+.edit-form select {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.edit-form .actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.edit-form .actions button {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-form .actions button:first-child {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.edit-form .actions button:first-child:hover {
+  background-color: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.edit-form .actions button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.edit-form .actions button:last-child:hover {
+  background-color: #da190b;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+
+.edit-form button:focus {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+.collapsible {
+  max-height: 60px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  position: relative;
+}
+
+
+.collapsible.expanded {
+  max-height: 500px;
+}
+.collapsible p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.overdue-indicator {
+  color: #d00000;
+  font-weight: bold;
+}
+.priority-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.priority-parent{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.priority-low {
+  background-color: #2a9d8f;
+}
+
+.priority-medium {
+  background-color: #f4a261;
+}
+
+.priority-high {
+  background-color: #e63946;
+}
+.overdue-indicator {
+  color: #d00000;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+
+
+
+
+
+
+
+/* Responsiveness */
 @media (max-width: 500px) {
   .card {
     padding: 15px;
@@ -110,5 +274,19 @@ label {
   
   button {
     width: 100%; 
+  }
+}
+
+@media (max-width: 500px) {
+  .edit-form {
+    padding: 20px;
+  }
+
+  .edit-form .actions {
+    flex-direction: column;
+  }
+
+  .edit-form .actions button {
+    width: 100%;
   }
 }
